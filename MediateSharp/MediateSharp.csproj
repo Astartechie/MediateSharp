@@ -9,4 +9,8 @@
 	<ItemGroup>
 		<InternalsVisibleTo Include="MediateSharp.Tests" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.3" />
+	</ItemGroup>
 </Project>
