@@ -38,15 +38,6 @@ jobs:
         with:
           dotnet-version: 9.0.x
           
-      - name: Restore dependencies
-        run: dotnet restore
-        
-      - name: Build
-        run: dotnet build --no-restore
-        
-      - name: Test
-        run: dotnet test
-        
       - name: Generate NuGet package
         run: |
           dotnet pack MediateSharp/ \
