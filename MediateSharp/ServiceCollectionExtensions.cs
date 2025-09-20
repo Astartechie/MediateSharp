@@ -40,8 +40,8 @@ public static class ServiceCollectionExtensions
     }
 
     private static bool IsRequestHandler(Type type)
-        => type.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == RequestHandlerType);
+        => type.IsGenericType && type.GetGenericTypeDefinition() == RequestHandlerType;
 
     private static bool IsValidType(Type type)
-        => type is { IsInterface: false, IsAbstract: false, IsGenericType: false } && IsRequestHandler(type);
+        => type is { IsInterface: false, IsAbstract: false, IsGenericType: false } && type.GetInterfaces().Any(IsRequestHandler);
 }
